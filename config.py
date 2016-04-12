@@ -5,7 +5,6 @@
     配置文件
 """
 import logging
-import signal
 
 DOWNLOAD_DIR = "/tmp/page/"
 RABBITMQ_HOST = "172.17.42.1"
@@ -17,5 +16,4 @@ logging.basicConfig(level=logging.INFO,
 
 DOWNLOAD_ACK_TOPIC = "download_ack_topic"
 DOWNLOAD_ACK_ROUTING_PREFIX = "download_ack"
-EXT_SIGNAL = signal.SIGSEGV
 PID_PREFIX = "crawler_"

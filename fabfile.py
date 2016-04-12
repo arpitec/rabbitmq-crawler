@@ -9,12 +9,16 @@ env.hosts = ['root@RealserverNet1', 'root@172.17.0.1']
 BASE_DIR = os.path.dirname(__file__)
 remote_dir = '/opt/crawler/'
 
+
 def pack():
+    """
+    项目打包
+    """
+
     tar_files = ['*.py', 'supervisord.conf']
     local('rm -f /tmp/crawler.tar.gz')
     with cd(BASE_DIR):
         local('tar -czvf /tmp/crawler.tar.gz --exclude=\'*.tar.gz\' --exclude=\'fabfile.py\' %s' % ' '.join(tar_files))
-
 
 def put_code():
     """
